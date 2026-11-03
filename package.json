@@ -1,6 +1,8 @@
 {
-  "name": "next-ecommerce-shopco",
-  "version": "0.1.0",
+  "name": "shopco-sales-assistant",
+  "version": "1.0.0",
+  "description": "ShopCo Tech E-Commerce with Google Gemini AI Sales Concierge & Live Google Sheets Inventory",
+  "author": "Aleena Ather",
   "private": true,
   "scripts": {
     "dev": "next dev",
