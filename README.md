@@ -1,5 +1,9 @@
 # ⚡ ShopCo Tech — AI Sales Concierge & Electronics Store
 
+<div align="center">
+  <img src="./docs/preview.jpg" alt="ShopCo Tech Store & AI Assistant Preview" width="100%" style="border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.12);" />
+</div>
+
 > **Capstone Project**: A production-grade e-commerce web application featuring real-time Google Sheets inventory synchronization and an intelligent AI Sales Concierge powered by **Google Gemini 3.1 Flash Lite**.
 
 ---
