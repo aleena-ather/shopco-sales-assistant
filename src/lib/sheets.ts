@@ -215,17 +215,31 @@ export async function getGoogleSheetProducts(forceRefresh = false): Promise<Prod
   }
 
   try {
-    const keyPath = path.isAbsolute(KEY_FILE_NAME)
-      ? KEY_FILE_NAME
-      : path.join(process.cwd(), KEY_FILE_NAME);
+    let creds: ServiceAccountCredentials;
 
-    if (!fs.existsSync(keyPath)) {
-      console.warn(`[GoogleSheets] Service account key not found at ${keyPath}`);
-      return cachedProducts || [];
+    if (process.env.GOOGLE_SERVICE_ACCOUNT_CREDENTIALS) {
+      try {
+        const raw = process.env.GOOGLE_SERVICE_ACCOUNT_CREDENTIALS.trim();
+        creds = raw.startsWith("{")
+          ? JSON.parse(raw)
+          : JSON.parse(Buffer.from(raw, "base64").toString("utf8"));
+      } catch (parseErr) {
+        console.error("[GoogleSheets] Failed to parse GOOGLE_SERVICE_ACCOUNT_CREDENTIALS:", parseErr);
+        return cachedProducts || [];
+      }
+    } else {
+      const keyPath = path.isAbsolute(KEY_FILE_NAME)
+        ? KEY_FILE_NAME
+        : path.join(process.cwd(), KEY_FILE_NAME);
+
+      if (!fs.existsSync(keyPath)) {
+        console.warn(`[GoogleSheets] Service account key not found at ${keyPath}`);
+        return cachedProducts || [];
+      }
+
+      const credsRaw = fs.readFileSync(keyPath, "utf8");
+      creds = JSON.parse(credsRaw);
     }
-
-    const credsRaw = fs.readFileSync(keyPath, "utf8");
-    const creds: ServiceAccountCredentials = JSON.parse(credsRaw);
 
     const token = await getAccessToken(creds);
 
