@@ -180,8 +180,8 @@ const BentoShowcase = () => {
 
           <div className="absolute right-0 bottom-0 w-3/5 sm:w-1/2 h-full opacity-40 sm:opacity-90 pointer-events-none group-hover:scale-105 transition-transform duration-700">
             <Image
-              src="/images/electronics/cat-accessories.jpg"
-              alt="Desk Accessories"
+              src="/images/electronics/laptop-stand.jpg"
+              alt="Ergonomic Laptop Stand"
               fill
               className="object-contain object-bottom-right p-4"
             />

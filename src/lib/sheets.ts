@@ -223,6 +223,10 @@ export async function getGoogleSheetProducts(forceRefresh = false): Promise<Prod
         creds = raw.startsWith("{")
           ? JSON.parse(raw)
           : JSON.parse(Buffer.from(raw, "base64").toString("utf8"));
+
+        if (creds && creds.private_key) {
+          creds.private_key = creds.private_key.replace(/\\n/g, "\n");
+        }
       } catch (parseErr) {
         console.error("[GoogleSheets] Failed to parse GOOGLE_SERVICE_ACCOUNT_CREDENTIALS:", parseErr);
         return cachedProducts || [];
@@ -239,6 +243,9 @@ export async function getGoogleSheetProducts(forceRefresh = false): Promise<Prod
 
       const credsRaw = fs.readFileSync(keyPath, "utf8");
       creds = JSON.parse(credsRaw);
+      if (creds && creds.private_key) {
+        creds.private_key = creds.private_key.replace(/\\n/g, "\n");
+      }
     }
 
     const token = await getAccessToken(creds);

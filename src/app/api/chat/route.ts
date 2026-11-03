@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getGoogleSheetProducts } from "@/lib/sheets";
+import { defaultAllProducts } from "@/lib/products";
 import { Product } from "@/types/product.types";
 
 export const dynamic = "force-dynamic";
@@ -39,6 +40,23 @@ function isSimilarSubcategory(titleA: string, titleB: string): boolean {
   return false;
 }
 
+/**
+ * Checks whether user query refers to a product using fuzzy word matching.
+ * e.g. "wireless headset" matches "Wireless Gaming Headset".
+ */
+function matchesProductFuzzy(userText: string, productTitle: string): boolean {
+  const u = userText.toLowerCase().trim();
+  const t = productTitle.toLowerCase().trim();
+  if (u.includes(t) || t.includes(u)) return true;
+
+  const stopWords = new Set(["the", "and", "for", "with", "show", "what", "have", "you", "are", "items", "item", "product", "products", "under"]);
+  const uWords = u.split(/[^a-z0-9]+/).filter((w) => w.length >= 3 && !stopWords.has(w));
+  if (uWords.length >= 2 && uWords.every((w) => t.includes(w))) {
+    return true;
+  }
+  return false;
+}
+
 // In-memory product cache for instant responses (60s TTL)
 let cachedSheetProducts: Product[] = [];
 let lastFetchTime = 0;
@@ -74,6 +92,10 @@ export async function POST(req: NextRequest) {
           sheetProducts = cachedSheetProducts;
         }
       }
+    }
+
+    if (sheetProducts.length === 0) {
+      sheetProducts = defaultAllProducts;
     }
 
     const catalogData = sheetProducts.map((p) => ({
@@ -294,14 +316,14 @@ You MUST respond with valid JSON containing exactly two keys:
     );
 
     let mentionedOutProduct = outOfStockProducts.find((p) =>
-      lowerUserMsg.includes(p.title.toLowerCase())
+      matchesProductFuzzy(lowerUserMsg, p.title)
     );
 
     if (!mentionedOutProduct && !isNonProductIntent && !isAskingOutOfStockList) {
       // Find the most recently mentioned out-of-stock product in recent messages
       for (let i = messages.length - 1; i >= 0; i--) {
         const text = (messages[i]?.content || "").toLowerCase();
-        const found = outOfStockProducts.find((p) => text.includes(p.title.toLowerCase()));
+        const found = outOfStockProducts.find((p) => matchesProductFuzzy(text, p.title));
         if (found) {
           mentionedOutProduct = found;
           break;
@@ -454,6 +476,32 @@ You MUST respond with valid JSON containing exactly two keys:
               !validCards.some((v) => v.id === p.id)
           );
           validCards = [...validCards, ...underBudgetItems].slice(0, 4);
+        }
+      }
+
+      // If cards are still empty for a product-related query, smartly auto-match catalog in-stock items
+      if (validCards.length === 0 && !isAskingOutOfStockList) {
+        const queryWords = lowerUserMsg
+          .split(/[^a-z0-9]+/)
+          .filter(
+            (w) =>
+              w.length >= 3 &&
+              !["what", "show", "have", "with", "item", "items", "stock", "under", "price", "store", "your", "give", "list"].includes(w)
+          );
+
+        const keywordMatches = catalogData.filter((p) => {
+          if (p.stockStatus.toLowerCase() !== "in stock") return false;
+          if (mentionedOutProduct && p.id === mentionedOutProduct.id) return false;
+          if (maxBudget !== null && p.numericPrice > maxBudget) return false;
+
+          const pTitle = (p.title || "").toLowerCase();
+          const pCat = (p.category || "").toLowerCase();
+
+          return queryWords.some((w) => pTitle.includes(w) || pCat.includes(w));
+        });
+
+        if (keywordMatches.length > 0) {
+          validCards = keywordMatches.slice(0, 4);
         }
       }
     }
