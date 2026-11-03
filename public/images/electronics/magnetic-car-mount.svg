@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bgCanvas" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#EEF4FF" />
+      <stop offset="100%" stop-color="#E2E8F0" />
+    </radialGradient>
+    <linearGradient id="mountBody" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155" />
+      <stop offset="45%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <linearGradient id="metallicRim" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#94A3B8" />
+      <stop offset="50%" stop-color="#475569" />
+      <stop offset="100%" stop-color="#1E293B" />
+    </linearGradient>
+    <filter id="mountShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#0B1B3A" flood-opacity="0.2" />
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="600" height="600" rx="32" fill="url(#bgCanvas)" />
+
+  <!-- Ambient Ground Shadow -->
+  <ellipse cx="300" cy="485" rx="140" ry="22" fill="#0B1B3A" opacity="0.18" />
+
+  <!-- Dashboard Mounting Base with Adhesive / Suction Pad -->
+  <ellipse cx="300" cy="460" rx="100" ry="24" fill="#090D16" />
+  <ellipse cx="300" cy="455" rx="90" ry="20" fill="url(#mountBody)" stroke="#334155" stroke-width="1.5" />
+  
+  <!-- Base Stem / Upright Post -->
+  <path d="M 285 450 L 290 350 L 310 350 L 315 450 Z" fill="url(#metallicRim)" />
+  <rect x="286" y="380" width="28" height="12" rx="4" fill="#0F172A" />
+
+  <!-- 360-Degree Ball Joint Collar -->
+  <circle cx="300" cy="345" r="22" fill="#64748B" stroke="#1E293B" stroke-width="2" />
+  <circle cx="300" cy="345" r="16" fill="url(#metallicRim)" />
+  <!-- Locking Tightening Nut -->
+  <rect x="280" y="336" width="40" height="18" rx="5" fill="#1E293B" stroke="#475569" stroke-width="1.5" />
+
+  <!-- Magnetic Head Mount Backplate -->
+  <circle cx="300" cy="240" r="115" fill="#0F172A" filter="url(#mountShadow)" />
+  <!-- Beveled Metal Outer Ring -->
+  <circle cx="300" cy="240" r="110" fill="url(#metallicRim)" stroke="#64748B" stroke-width="1.5" />
+
+  <!-- Silicon Non-Slip Contact Face Pad -->
+  <circle cx="300" cy="240" r="98" fill="url(#mountBody)" stroke="#1E293B" stroke-width="2" />
+
+  <!-- Neodymium Magnetic Array Alignment Ring (Electric Blue Accent) -->
+  <circle cx="300" cy="240" r="74" fill="none" stroke="#2F6BFF" stroke-width="4" stroke-dasharray="24 12" stroke-linecap="round" opacity="0.9" />
+  <circle cx="300" cy="240" r="74" fill="none" stroke="#60A5FA" stroke-width="1" opacity="0.6" />
+
+  <!-- Center Alignment Symbol / Magnet Target -->
+  <circle cx="300" cy="240" r="22" fill="#0F172A" stroke="#334155" stroke-width="1.5" />
+  <circle cx="300" cy="240" r="14" fill="#1E293B" />
+  <circle cx="300" cy="240" r="6" fill="#2F6BFF" />
+
+  <!-- Subtle Top Light Reflection -->
+  <path d="M 230 160 A 100 100 0 0 1 370 160" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" opacity="0.3" />
+</svg>
+

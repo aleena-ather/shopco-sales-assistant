@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <radialGradient id="headsetBg" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#F1F5F9" />
+      <stop offset="100%" stop-color="#E2E8F0" />
+    </radialGradient>
+    <linearGradient id="headbandGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#334155" />
+      <stop offset="50%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <linearGradient id="earcupGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" />
+      <stop offset="70%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#090D16" />
+    </linearGradient>
+    <linearGradient id="steelArm" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#CBD5E1" />
+      <stop offset="50%" stop-color="#94A3B8" />
+      <stop offset="100%" stop-color="#64748B" />
+    </linearGradient>
+    <filter id="headsetShadow" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#0B1B3A" flood-opacity="0.22" />
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="600" height="600" rx="32" fill="url(#headsetBg)" />
+
+  <!-- Ambient Shadow -->
+  <ellipse cx="300" cy="460" rx="190" ry="32" fill="#0B1B3A" opacity="0.18" />
+
+  <!-- Durable Braided Audio Cable with 3.5mm Jack -->
+  <g>
+    <!-- Cable loop coming out from Left Earcup -->
+    <path d="M 180 340 C 120 400, 160 520, 260 500 C 330 480, 360 520, 420 490" fill="none" stroke="#1E293B" stroke-width="8" stroke-linecap="round" />
+    <!-- Inline Volume / Mute Control Box -->
+    <rect x="220" y="475" width="44" height="20" rx="6" fill="#0F172A" stroke="#334155" stroke-width="1.5" />
+    <circle cx="234" cy="485" r="4" fill="#2F6BFF" />
+    <rect x="246" y="482" width="10" height="6" rx="2" fill="#64748B" />
+
+    <!-- 3.5mm Gold-Plated Audio Jack -->
+    <g transform="translate(425, 485) rotate(-20)">
+      <rect x="0" y="-7" width="28" height="14" rx="4" fill="#1E293B" stroke="#475569" stroke-width="1" />
+      <!-- Gold tip and rings -->
+      <rect x="28" y="-4" width="18" height="8" rx="2" fill="#EAB308" />
+      <line x1="33" y1="-4" x2="33" y2="4" stroke="#000000" stroke-width="1.5" />
+      <line x1="39" y1="-4" x2="39" y2="4" stroke="#000000" stroke-width="1.5" />
+    </g>
+  </g>
+
+  <!-- Main Headset Group -->
+  <g filter="url(#headsetShadow)">
+    <!-- Top Padded Headband Arch -->
+    <path d="M 185 280 C 185 130, 415 130, 415 280" fill="none" stroke="url(#headbandGrad)" stroke-width="32" stroke-linecap="round" />
+    <!-- Cushioned Underside -->
+    <path d="M 210 260 C 210 160, 390 160, 390 260" fill="none" stroke="#0F172A" stroke-width="18" stroke-linecap="round" />
+    <!-- Stitched Headband segments -->
+    <path d="M 220 250 C 220 170, 380 170, 380 250" fill="none" stroke="#334155" stroke-width="2" stroke-dasharray="6 6" />
+
+    <!-- Steel Adjustment Sliders -->
+    <rect x="172" y="240" width="14" height="45" rx="3" fill="url(#steelArm)" />
+    <rect x="414" y="240" width="14" height="45" rx="3" fill="url(#steelArm)" />
+
+    <!-- Left Earcup Outer Shell -->
+    <g transform="translate(175, 305)">
+      <!-- Soft Memory-Foam Cushion Behind Shell -->
+      <ellipse cx="-5" cy="0" rx="28" ry="55" fill="#090D16" />
+      <!-- Plastic/Metal Outer Shell -->
+      <ellipse cx="6" cy="0" rx="24" ry="48" fill="url(#earcupGrad)" stroke="#334155" stroke-width="2" />
+      <!-- Blue Gaming Accent Ring -->
+      <ellipse cx="6" cy="0" rx="16" ry="34" fill="none" stroke="#2F6BFF" stroke-width="3" opacity="0.85" />
+    </g>
+
+    <!-- Right Earcup Outer Shell -->
+    <g transform="translate(425, 305)">
+      <!-- Soft Memory-Foam Cushion Behind Shell -->
+      <ellipse cx="5" cy="0" rx="28" ry="55" fill="#090D16" />
+      <!-- Plastic/Metal Outer Shell -->
+      <ellipse cx="-6" cy="0" rx="24" ry="48" fill="url(#earcupGrad)" stroke="#334155" stroke-width="2" />
+      <!-- Blue Gaming Accent Ring -->
+      <ellipse cx="-6" cy="0" rx="16" ry="34" fill="none" stroke="#2F6BFF" stroke-width="3" opacity="0.85" />
+    </g>
+
+    <!-- Flexible Boom Microphone with Pop Filter -->
+    <g>
+      <!-- Boom Mic Arm -->
+      <path d="M 180 325 Q 160 380, 260 385" fill="none" stroke="url(#steelArm)" stroke-width="5" stroke-linecap="round" />
+      <!-- Swivel Joint at earcup -->
+      <circle cx="180" cy="325" r="9" fill="#0F172A" stroke="#334155" stroke-width="2" />
+      <!-- Foam Windscreen Mic Capsule -->
+      <ellipse cx="270" cy="385" rx="14" ry="10" fill="#1E293B" stroke="#0F172A" stroke-width="1.5" />
+      <!-- Mic Grille / LED Ring -->
+      <ellipse cx="282" cy="385" rx="2" ry="7" fill="#2F6BFF" />
+    </g>
+  </g>
+
+  <!-- Label -->
+  <text x="300" y="550" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#475569" letter-spacing="1.5">PRO ESPORTS BOOM MIC HEADSET</text>
+</svg>
+

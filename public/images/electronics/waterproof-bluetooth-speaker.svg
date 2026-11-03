@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <radialGradient id="spkBg" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#F1F5F9" />
+      <stop offset="100%" stop-color="#E2E8F0" />
+    </radialGradient>
+    <linearGradient id="cylinderBody" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#334155" />
+      <stop offset="25%" stop-color="#1E293B" />
+      <stop offset="75%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#1E293B" />
+    </linearGradient>
+    <linearGradient id="bumperGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#475569" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <pattern id="spkMesh" width="6" height="6" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="1.2" fill="#475569" opacity="0.65" />
+    </pattern>
+    <filter id="spkShadow" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#0B1B3A" flood-opacity="0.22" />
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="600" height="600" rx="32" fill="url(#spkBg)" />
+
+  <!-- Ambient Shadow on Ground -->
+  <ellipse cx="300" cy="425" rx="210" ry="32" fill="#0B1B3A" opacity="0.18" />
+
+  <!-- Main Speaker Assembly (Horizontal Rugged Cylinder) -->
+  <g filter="url(#spkShadow)">
+    <!-- Main Cylinder Body (Acoustic Fabric Wrap) -->
+    <rect x="110" y="220" width="380" height="150" rx="40" fill="url(#cylinderBody)" stroke="#334155" stroke-width="2" />
+    <rect x="110" y="220" width="380" height="150" rx="40" fill="url(#spkMesh)" />
+
+    <!-- Left Shock-Absorbing Silicone Bumper / Passive Radiator Cap -->
+    <g transform="translate(100, 220)">
+      <path d="M 40 0 L 15 0 C 5 0, 0 30, 0 75 C 0 120, 5 150, 15 150 L 40 150 Z" fill="url(#bumperGrad)" stroke="#334155" stroke-width="2" />
+      <!-- Left Bass Radiator Disc -->
+      <ellipse cx="14" cy="75" rx="10" ry="45" fill="#090D16" />
+      <ellipse cx="14" cy="75" rx="6" ry="28" fill="#1E293B" stroke="#2F6BFF" stroke-width="1.5" />
+    </g>
+
+    <!-- Right Shock-Absorbing Silicone Bumper / Passive Radiator Cap -->
+    <g transform="translate(460, 220)">
+      <path d="M 0 0 L 25 0 C 35 0, 40 30, 40 75 C 40 120, 35 150, 25 150 L 0 150 Z" fill="url(#bumperGrad)" stroke="#334155" stroke-width="2" />
+      <!-- Right Bass Radiator Disc -->
+      <ellipse cx="26" cy="75" rx="10" ry="45" fill="#090D16" />
+      <ellipse cx="26" cy="75" rx="6" ry="28" fill="#1E293B" stroke="#2F6BFF" stroke-width="1.5" />
+    </g>
+
+    <!-- Top Rubberized Control Strip -->
+    <rect x="180" y="210" width="240" height="20" rx="10" fill="#0F172A" stroke="#334155" stroke-width="1.5" />
+
+    <!-- Controls Icons (No Brand Logos) -->
+    <!-- Power Button -->
+    <circle cx="210" cy="220" r="5" fill="none" stroke="#60A5FA" stroke-width="1.8" />
+    <line x1="210" y1="216" x2="210" y2="220" stroke="#60A5FA" stroke-width="1.8" />
+
+    <!-- Bluetooth Icon -->
+    <path d="M 255 214 L 261 220 L 252 225 L 252 215 L 261 220 L 255 226" fill="none" stroke="#2F6BFF" stroke-width="1.8" stroke-linejoin="round" />
+
+    <!-- Volume - -->
+    <line x1="300" y1="220" x2="312" y2="220" stroke="#E2E8F0" stroke-width="2.5" stroke-linecap="round" />
+
+    <!-- Play/Pause -->
+    <polygon points="345,214 355,220 345,226" fill="#E2E8F0" />
+
+    <!-- Volume + -->
+    <line x1="385" y1="220" x2="397" y2="220" stroke="#E2E8F0" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="391" y1="214" x2="391" y2="226" stroke="#E2E8F0" stroke-width="2.5" stroke-linecap="round" />
+
+    <!-- Rugged Paracord Lanyard Loop on Right Cap -->
+    <path d="M 480 260 C 530 260, 545 320, 500 330" fill="none" stroke="#F97316" stroke-width="5" stroke-linecap="round" stroke-dasharray="8 4" />
+    <circle cx="482" cy="265" r="4" fill="#0F172A" />
+
+    <!-- Water droplet accent badges -->
+    <g transform="translate(290, 285)">
+      <!-- Central IPX7 Waterproof Emblem -->
+      <rect x="-45" y="0" width="110" height="26" rx="13" fill="#0B1B3A" stroke="#2F6BFF" stroke-width="1.5" />
+      <path d="M -30 13 Q -26 6 -22 13 Q -20 18 -26 18 Q -32 18 -30 13 Z" fill="#38BDF8" />
+      <text x="12" y="17" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" letter-spacing="1">IPX7 WATERPROOF</text>
+    </g>
+  </g>
+
+  <!-- Title / Spec -->
+  <text x="300" y="500" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#475569" letter-spacing="1.5">RUGGED DUAL-RADIATOR BLUETOOTH SPEAKER</text>
+</svg>
+

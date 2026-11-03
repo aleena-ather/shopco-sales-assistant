@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <radialGradient id="standBg" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#F1F5F9" />
+      <stop offset="100%" stop-color="#E2E8F0" />
+    </radialGradient>
+    <linearGradient id="silverPlate" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E2E8F0" />
+      <stop offset="50%" stop-color="#CBD5E1" />
+      <stop offset="100%" stop-color="#94A3B8" />
+    </linearGradient>
+    <linearGradient id="standArm" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#94A3B8" />
+      <stop offset="100%" stop-color="#64748B" />
+    </linearGradient>
+    <linearGradient id="darkRubber" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <filter id="standShadow" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#0B1B3A" flood-opacity="0.2" />
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="600" height="600" rx="32" fill="url(#standBg)" />
+
+  <!-- Ambient Shadows on Desk Surface -->
+  <ellipse cx="300" cy="450" rx="200" ry="25" fill="#0B1B3A" opacity="0.18" />
+
+  <!-- Laptop Stand Assembly in Perspective -->
+  <g filter="url(#standShadow)">
+    <!-- Base Plate / Feet -->
+    <path d="M 170 420 L 430 420 L 400 370 L 200 370 Z" fill="url(#silverPlate)" stroke="#64748B" stroke-width="1.5" />
+    <!-- Anti-slip silicone base feet -->
+    <rect x="180" y="414" width="40" height="8" rx="3" fill="url(#darkRubber)" />
+    <rect x="380" y="414" width="40" height="8" rx="3" fill="url(#darkRubber)" />
+
+    <!-- Twin Angled Heavy-Duty Riser Arms -->
+    <!-- Left Riser Arm -->
+    <polygon points="215,370 235,370 200,240 180,240" fill="url(#standArm)" stroke="#475569" stroke-width="1.5" />
+    <!-- Right Riser Arm -->
+    <polygon points="365,370 385,370 420,240 400,240" fill="url(#standArm)" stroke="#475569" stroke-width="1.5" />
+    <!-- Pivot Hinge Discs -->
+    <circle cx="225" cy="370" r="14" fill="#64748B" stroke="#334155" stroke-width="1.5" />
+    <circle cx="225" cy="370" r="6" fill="#CBD5E1" />
+    <circle cx="375" cy="370" r="14" fill="#64748B" stroke="#334155" stroke-width="1.5" />
+    <circle cx="375" cy="370" r="6" fill="#CBD5E1" />
+
+    <!-- Top Laptop Platform Plate (Ergonomic Tilted Surface) -->
+    <polygon points="120,330 480,330 420,200 180,200" fill="url(#silverPlate)" stroke="#64748B" stroke-width="2" />
+
+    <!-- Large Ventilation Cooling Cutouts -->
+    <rect x="230" y="225" width="140" height="28" rx="14" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1" />
+    <rect x="210" y="265" width="180" height="28" rx="14" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1" />
+
+    <!-- Silicone Anti-Slip Protective Pads on Platform -->
+    <rect x="150" y="215" width="30" height="85" rx="6" fill="url(#darkRubber)" />
+    <rect x="420" y="215" width="30" height="85" rx="6" fill="url(#darkRubber)" />
+
+    <!-- Front Protective Hook Retainers with Silicone Padding -->
+    <g transform="translate(140, 320)">
+      <path d="M 0 10 L 0 -15 Q 12 -20 24 -15 L 24 10 Z" fill="url(#silverPlate)" stroke="#475569" stroke-width="1.5" />
+      <rect x="4" y="-12" width="16" height="18" rx="4" fill="url(#darkRubber)" />
+    </g>
+    <g transform="translate(436, 320)">
+      <path d="M 0 10 L 0 -15 Q 12 -20 24 -15 L 24 10 Z" fill="url(#silverPlate)" stroke="#475569" stroke-width="1.5" />
+      <rect x="4" y="-12" width="16" height="18" rx="4" fill="url(#darkRubber)" />
+    </g>
+  </g>
+
+  <!-- Title / Spec -->
+  <text x="300" y="520" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#475569" letter-spacing="1.5">MACHINED AIRCRAFT-GRADE ALUMINUM RISER</text>
+</svg>
+

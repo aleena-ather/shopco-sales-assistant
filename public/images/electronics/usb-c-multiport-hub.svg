@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <radialGradient id="hubBg" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#F1F5F9" />
+      <stop offset="100%" stop-color="#E2E8F0" />
+    </radialGradient>
+    <linearGradient id="hubBody" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155" />
+      <stop offset="35%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <linearGradient id="bevelEdge" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#64748B" />
+      <stop offset="100%" stop-color="#1E293B" />
+    </linearGradient>
+    <linearGradient id="cableGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#475569" />
+      <stop offset="50%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#334155" />
+    </linearGradient>
+    <linearGradient id="plugGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#64748B" />
+      <stop offset="100%" stop-color="#1E293B" />
+    </linearGradient>
+    <filter id="hubShadow" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#0B1B3A" flood-opacity="0.22" />
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="600" height="600" rx="32" fill="url(#hubBg)" />
+
+  <!-- Ambient Shadow -->
+  <ellipse cx="320" cy="415" rx="190" ry="24" fill="#0B1B3A" opacity="0.18" />
+
+  <!-- Integrated Braided USB-C Cable -->
+  <path d="M 230 190 C 230 130, 370 120, 390 170" fill="none" stroke="url(#cableGrad)" stroke-width="14" stroke-linecap="round" />
+  
+  <!-- Cable Strain Relief at Hub -->
+  <rect x="222" y="180" width="16" height="22" rx="4" fill="#0F172A" />
+  <rect x="224" y="196" width="12" height="10" rx="2" fill="#475569" />
+
+  <!-- USB-C Plug End -->
+  <rect x="375" y="165" width="28" height="42" rx="6" fill="url(#plugGrad)" stroke="#475569" stroke-width="1.5" />
+  <!-- USB-C Male Metal Tip -->
+  <rect x="382" y="207" width="14" height="20" rx="3" fill="#94A3B8" stroke="#CBD5E1" stroke-width="1" />
+  <rect x="386" y="213" width="6" height="8" rx="2" fill="#0F172A" />
+
+  <!-- Main Multiport Hub Aluminum Body -->
+  <rect x="180" y="200" width="240" height="195" rx="20" fill="url(#hubBody)" filter="url(#hubShadow)" stroke="url(#bevelEdge)" stroke-width="2" />
+
+  <!-- Surface Highlight (Chamfered reflection) -->
+  <rect x="182" y="202" width="236" height="8" rx="4" fill="#FFFFFF" opacity="0.12" />
+
+  <!-- Power Status LED (Active Blue) -->
+  <circle cx="215" cy="235" r="4.5" fill="#2F6BFF" />
+  <circle cx="215" cy="235" r="9" fill="#2F6BFF" opacity="0.35" />
+
+  <!-- Ports Section on Left/Front: USB 3.0 Ports (Blue tongues) -->
+  <!-- Port 1: USB 3.0 -->
+  <g transform="translate(205, 275)">
+    <rect x="0" y="0" width="85" height="18" rx="4" fill="#090D16" stroke="#334155" stroke-width="1" />
+    <rect x="6" y="3" width="73" height="6" rx="2" fill="#2F6BFF" />
+    <text x="96" y="13" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#94A3B8">USB 3.0</text>
+  </g>
+
+  <!-- Port 2: USB 3.0 -->
+  <g transform="translate(205, 305)">
+    <rect x="0" y="0" width="85" height="18" rx="4" fill="#090D16" stroke="#334155" stroke-width="1" />
+    <rect x="6" y="3" width="73" height="6" rx="2" fill="#2F6BFF" />
+    <text x="96" y="13" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#94A3B8">USB 3.0</text>
+  </g>
+
+  <!-- Port 3: USB-C 100W Power Delivery -->
+  <g transform="translate(205, 336)">
+    <rect x="0" y="0" width="50" height="16" rx="8" fill="#090D16" stroke="#334155" stroke-width="1" />
+    <rect x="15" y="5" width="20" height="6" rx="3" fill="#64748B" />
+    <text x="60" y="12" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#38BDF8">USB-C PD 100W</text>
+  </g>
+
+  <!-- SD & Micro SD Card Slots on Right Edge -->
+  <rect x="360" y="276" width="46" height="6" rx="2" fill="#090D16" stroke="#334155" stroke-width="1" />
+  <text x="360" y="268" font-family="system-ui, sans-serif" font-size="9" font-weight="500" fill="#64748B">SD / TF</text>
+  <rect x="360" y="292" width="30" height="4" rx="1.5" fill="#090D16" stroke="#334155" stroke-width="1" />
+
+  <!-- HDMI 4K Port (Bottom Edge) -->
+  <g transform="translate(280, 368)">
+    <path d="M 0 0 L 40 0 L 36 12 L 4 12 Z" fill="#090D16" stroke="#334155" stroke-width="1" />
+    <text x="50" y="10" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#A855F7">4K HDMI</text>
+  </g>
+</svg>
+

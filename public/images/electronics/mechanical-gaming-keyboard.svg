@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <radialGradient id="kbBg" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#F1F5F9" />
+      <stop offset="100%" stop-color="#E2E8F0" />
+    </radialGradient>
+    <linearGradient id="chassisGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#334155" />
+      <stop offset="15%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <linearGradient id="keyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#475569" />
+      <stop offset="100%" stop-color="#1E293B" />
+    </linearGradient>
+    <linearGradient id="wasdGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#1D4ED8" />
+    </linearGradient>
+    <linearGradient id="rgbUnderglow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#A855F7" />
+      <stop offset="35%" stop-color="#3B82F6" />
+      <stop offset="70%" stop-color="#06B6D4" />
+      <stop offset="100%" stop-color="#10B981" />
+    </linearGradient>
+    <filter id="kbShadow" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#0B1B3A" flood-opacity="0.22" />
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="600" height="600" rx="32" fill="url(#kbBg)" />
+
+  <!-- Ambient Shadow -->
+  <ellipse cx="300" cy="430" rx="235" ry="30" fill="#0B1B3A" opacity="0.18" />
+
+  <!-- Top Braided USB Cable -->
+  <path d="M 300 210 C 300 130, 360 120, 390 80" fill="none" stroke="#1E293B" stroke-width="10" stroke-linecap="round" />
+  <rect x="294" y="200" width="12" height="15" rx="3" fill="#0F172A" />
+
+  <!-- Main Aluminum Chassis -->
+  <rect x="65" y="210" width="470" height="200" rx="16" fill="url(#chassisGrad)" filter="url(#kbShadow)" stroke="#475569" stroke-width="1.5" />
+
+  <!-- RGB Underglow Lightbar along bottom edge -->
+  <rect x="75" y="398" width="450" height="4" rx="2" fill="url(#rgbUnderglow)" opacity="0.9" />
+
+  <!-- Keyboard Inner Plate -->
+  <rect x="80" y="224" width="440" height="170" rx="8" fill="#090D16" />
+
+  <!-- Volume Roller (Top Right) -->
+  <rect x="475" y="228" width="35" height="14" rx="4" fill="#94A3B8" stroke="#475569" stroke-width="1" />
+  <line x1="482" y1="228" x2="482" y2="242" stroke="#475569" />
+  <line x1="492" y1="228" x2="492" y2="242" stroke="#475569" />
+  <line x1="502" y1="228" x2="502" y2="242" stroke="#475569" />
+
+  <!-- Function Row Keys (Row 1) -->
+  <g transform="translate(90, 246)">
+    <!-- Esc -->
+    <rect x="0" y="0" width="22" height="18" rx="3" fill="#EF4444" />
+    <text x="11" y="12" text-anchor="middle" font-family="system-ui, sans-serif" font-size="7" font-weight="700" fill="#FFFFFF">ESC</text>
+    <!-- F1-F12 -->
+    <rect x="35" y="0" width="20" height="18" rx="3" fill="url(#keyGrad)" />
+    <rect x="60" y="0" width="20" height="18" rx="3" fill="url(#keyGrad)" />
+    <rect x="85" y="0" width="20" height="18" rx="3" fill="url(#keyGrad)" />
+    <rect x="110" y="0" width="20" height="18" rx="3" fill="url(#keyGrad)" />
+    <rect x="145" y="0" width="20" height="18" rx="3" fill="url(#keyGrad)" />
+    <rect x="170" y="0" width="20" height="18" rx="3" fill="url(#keyGrad)" />
+    <rect x="195" y="0" width="20" height="18" rx="3" fill="url(#keyGrad)" />
+    <rect x="220" y="0" width="20" height="18" rx="3" fill="url(#keyGrad)" />
+    <rect x="255" y="0" width="20" height="18" rx="3" fill="url(#keyGrad)" />
+    <rect x="280" y="0" width="20" height="18" rx="3" fill="url(#keyGrad)" />
+    <rect x="305" y="0" width="20" height="18" rx="3" fill="url(#keyGrad)" />
+    <rect x="330" y="0" width="20" height="18" rx="3" fill="url(#keyGrad)" />
+    <!-- Media / Nav -->
+    <rect x="365" y="0" width="20" height="18" rx="3" fill="url(#keyGrad)" />
+    <rect x="390" y="0" width="20" height="18" rx="3" fill="url(#keyGrad)" />
+  </g>
+
+  <!-- Number Row Keys (Row 2) -->
+  <g transform="translate(90, 272)">
+    <!-- 1-0 Keys -->
+    <rect x="0" y="0" width="24" height="22" rx="3" fill="url(#keyGrad)" />
+    <rect x="28" y="0" width="24" height="22" rx="3" fill="url(#keyGrad)" />
+    <rect x="56" y="0" width="24" height="22" rx="3" fill="url(#keyGrad)" />
+    <rect x="84" y="0" width="24" height="22" rx="3" fill="url(#keyGrad)" />
+    <rect x="112" y="0" width="24" height="22" rx="3" fill="url(#keyGrad)" />
+    <rect x="140" y="0" width="24" height="22" rx="3" fill="url(#keyGrad)" />
+    <rect x="168" y="0" width="24" height="22" rx="3" fill="url(#keyGrad)" />
+    <rect x="196" y="0" width="24" height="22" rx="3" fill="url(#keyGrad)" />
+    <rect x="224" y="0" width="24" height="22" rx="3" fill="url(#keyGrad)" />
+    <rect x="252" y="0" width="24" height="22" rx="3" fill="url(#keyGrad)" />
+    <rect x="280" y="0" width="24" height="22" rx="3" fill="url(#keyGrad)" />
+    <rect x="308" y="0" width="24" height="22" rx="3" fill="url(#keyGrad)" />
+    <!-- Backspace -->
+    <rect x="336" y="0" width="46" height="22" rx="3" fill="url(#keyGrad)" />
+    <rect x="390" y="0" width="24" height="22" rx="3" fill="url(#keyGrad)" />
+  </g>
+
+  <!-- QWERTY Row (Row 3) with W Key in Blue -->
+  <g transform="translate(90, 300)">
+    <rect x="0" y="0" width="34" height="22" rx="3" fill="url(#keyGrad)" />
+    <rect x="38" y="0" width="24" height="22" rx="3" fill="url(#keyGrad)" />
+    <!-- W Key (Gaming Highlight) -->
+    <rect x="66" y="0" width="24" height="22" rx="3" fill="url(#wasdGrad)" stroke="#60A5FA" stroke-width="1.2" />
+    <text x="78" y="15" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" font-weight="800" fill="#FFFFFF">W</text>
+    <rect x="94" y="0" width="24" height="22" rx="3" fill="url(#keyGrad)" />
+    <rect x="122" y="0" width="24" height="22" rx="3" fill="url(#keyGrad)" />
+    <rect x="150" y="0" width="24" height="22" rx="3" fill="url(#keyGrad)" />
+    <rect x="178" y="0" width="24" height="22" rx="3" fill="url(#keyGrad)" />
+    <rect x="206" y="0" width="24" height="22" rx="3" fill="url(#keyGrad)" />
+    <rect x="234" y="0" width="24" height="22" rx="3" fill="url(#keyGrad)" />
+    <rect x="262" y="0" width="24" height="22" rx="3" fill="url(#keyGrad)" />
+    <rect x="290" y="0" width="24" height="22" rx="3" fill="url(#keyGrad)" />
+    <rect x="318" y="0" width="30" height="22" rx="3" fill="url(#keyGrad)" />
+    <rect x="352" y="0" width="30" height="22" rx="3" fill="url(#keyGrad)" />
+    <rect x="390" y="0" width="24" height="22" rx="3" fill="url(#keyGrad)" />
+  </g>
+
+  <!-- Home Row (Row 4) with A, S, D in Blue -->
+  <g transform="translate(90, 328)">
+    <rect x="0" y="0" width="40" height="22" rx="3" fill="url(#keyGrad)" />
+    <!-- A Key -->
+    <rect x="44" y="0" width="24" height="22" rx="3" fill="url(#wasdGrad)" stroke="#60A5FA" stroke-width="1.2" />
+    <text x="56" y="15" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" font-weight="800" fill="#FFFFFF">A</text>
+    <!-- S Key -->
+    <rect x="72" y="0" width="24" height="22" rx="3" fill="url(#wasdGrad)" stroke="#60A5FA" stroke-width="1.2" />
+    <text x="84" y="15" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" font-weight="800" fill="#FFFFFF">S</text>
+    <!-- D Key -->
+    <rect x="100" y="0" width="24" height="22" rx="3" fill="url(#wasdGrad)" stroke="#60A5FA" stroke-width="1.2" />
+    <text x="112" y="15" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" font-weight="800" fill="#FFFFFF">D</text>
+    <rect x="128" y="0" width="24" height="22" rx="3" fill="url(#keyGrad)" />
+    <rect x="156" y="0" width="24" height="22" rx="3" fill="url(#keyGrad)" />
+    <rect x="184" y="0" width="24" height="22" rx="3" fill="url(#keyGrad)" />
+    <rect x="212" y="0" width="24" height="22" rx="3" fill="url(#keyGrad)" />
+    <rect x="240" y="0" width="24" height="22" rx="3" fill="url(#keyGrad)" />
+    <rect x="268" y="0" width="24" height="22" rx="3" fill="url(#keyGrad)" />
+    <rect x="296" y="0" width="24" height="22" rx="3" fill="url(#keyGrad)" />
+    <!-- Enter -->
+    <rect x="324" y="0" width="58" height="22" rx="3" fill="url(#keyGrad)" />
+    <rect x="390" y="0" width="24" height="22" rx="3" fill="url(#keyGrad)" />
+  </g>
+
+  <!-- Bottom Row / Spacebar (Row 5) -->
+  <g transform="translate(90, 356)">
+    <rect x="0" y="0" width="36" height="26" rx="3" fill="url(#keyGrad)" />
+    <rect x="40" y="0" width="30" height="26" rx="3" fill="url(#keyGrad)" />
+    <rect x="74" y="0" width="32" height="26" rx="3" fill="url(#keyGrad)" />
+    <!-- Long Spacebar -->
+    <rect x="110" y="0" width="160" height="26" rx="4" fill="url(#keyGrad)" stroke="#2F6BFF" stroke-width="1" />
+    <rect x="274" y="0" width="30" height="26" rx="3" fill="url(#keyGrad)" />
+    <rect x="308" y="0" width="30" height="26" rx="3" fill="url(#keyGrad)" />
+    <rect x="342" y="0" width="40" height="26" rx="3" fill="url(#keyGrad)" />
+    <!-- Arrow Keys -->
+    <rect x="390" y="0" width="24" height="26" rx="3" fill="url(#keyGrad)" />
+  </g>
+
+  <!-- Title / Spec -->
+  <text x="300" y="475" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#475569" letter-spacing="1.5">RGB MECHANICAL GAMING KEYBOARD</text>
+</svg>
+

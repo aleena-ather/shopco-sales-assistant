@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bgLight" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#EEF4FF" />
+      <stop offset="100%" stop-color="#E2E8F0" />
+    </radialGradient>
+    <linearGradient id="restSurface" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#334155" />
+      <stop offset="25%" stop-color="#1E293B" />
+      <stop offset="80%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#090D16" />
+    </linearGradient>
+    <linearGradient id="gelContour" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1E293B" stop-opacity="0" />
+      <stop offset="25%" stop-color="#2F6BFF" stop-opacity="0.18" />
+      <stop offset="50%" stop-color="#60A5FA" stop-opacity="0.25" />
+      <stop offset="75%" stop-color="#2F6BFF" stop-opacity="0.18" />
+      <stop offset="100%" stop-color="#1E293B" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="baseRim" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+    <filter id="cushionShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#0B1B3A" flood-opacity="0.18" />
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="600" height="600" rx="32" fill="url(#bgLight)" />
+
+  <!-- Ambient Ground Shadow -->
+  <ellipse cx="300" cy="420" rx="230" ry="26" fill="#0B1B3A" opacity="0.16" />
+
+  <!-- Anti-Slip Rubber Base -->
+  <rect x="76" y="278" width="448" height="96" rx="26" fill="url(#baseRim)" />
+
+  <!-- Main Contoured Gel Cushion Body -->
+  <rect x="80" y="260" width="440" height="96" rx="24" fill="url(#restSurface)" filter="url(#cushionShadow)" stroke="#475569" stroke-width="1.5" />
+
+  <!-- Ergonomic Wave Highlight / Contour Gel Groove -->
+  <path d="M 104 290 Q 200 274, 300 292 T 496 290" fill="none" stroke="url(#gelContour)" stroke-width="18" stroke-linecap="round" />
+  <path d="M 110 286 Q 200 270, 300 288 T 490 286" fill="none" stroke="#60A5FA" stroke-width="2" stroke-linecap="round" opacity="0.4" />
+
+  <!-- Precision Stitched Perimeter Border -->
+  <rect x="86" y="266" width="428" height="84" rx="18" fill="none" stroke="#475569" stroke-width="1" stroke-dasharray="5 3" opacity="0.65" />
+
+  <!-- Wrist Ergonomic Indentations (Left and Right Palm Zones) -->
+  <ellipse cx="200" cy="308" rx="70" ry="24" fill="#0F172A" opacity="0.4" />
+  <ellipse cx="400" cy="308" rx="70" ry="24" fill="#0F172A" opacity="0.4" />
+
+  <!-- Subtle Cooling Gel Indicator Accent -->
+  <g transform="translate(285, 332)">
+    <circle cx="15" cy="8" r="8" fill="#1E293B" stroke="#2F6BFF" stroke-width="1" />
+    <path d="M 15 3 C 12 7, 10 9, 10 11 A 5 5 0 0 0 20 11 C 20 9, 18 7, 15 3 Z" fill="#2F6BFF" />
+  </g>
+</svg>
+

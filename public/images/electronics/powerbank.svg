@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <radialGradient id="pbBg" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#F1F5F9" />
+      <stop offset="100%" stop-color="#E2E8F0" />
+    </radialGradient>
+    <linearGradient id="pbBody" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155" />
+      <stop offset="35%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <linearGradient id="pbDisplay" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#090D16" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <linearGradient id="digitalGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#2F6BFF" />
+    </linearGradient>
+    <filter id="pbShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#0B1B3A" flood-opacity="0.22" />
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="600" height="600" rx="32" fill="url(#pbBg)" />
+
+  <!-- Ambient Shadow -->
+  <ellipse cx="300" cy="455" rx="160" ry="24" fill="#0B1B3A" opacity="0.18" />
+
+  <!-- Main Power Bank Body (Vertical Slim Profile) -->
+  <g filter="url(#pbShadow)">
+    <rect x="210" y="140" width="180" height="290" rx="28" fill="url(#pbBody)" stroke="#475569" stroke-width="2" />
+    
+    <!-- Top Edge Port Bevel -->
+    <path d="M 230 140 L 370 140 Q 390 140 390 160 L 210 160 Q 210 140 230 140 Z" fill="#0F172A" />
+
+    <!-- Ports on Top Edge -->
+    <!-- USB-A Port 1 -->
+    <rect x="230" y="146" width="30" height="8" rx="2" fill="#090D16" stroke="#334155" stroke-width="1" />
+    <rect x="232" y="147" width="26" height="3" rx="1" fill="#2F6BFF" />
+
+    <!-- USB-C Bidirectional PD Port -->
+    <rect x="278" y="146" width="44" height="8" rx="4" fill="#090D16" stroke="#38BDF8" stroke-width="1" />
+    <rect x="290" y="148" width="20" height="4" rx="2" fill="#64748B" />
+
+    <!-- USB-A Port 2 -->
+    <rect x="340" y="146" width="30" height="8" rx="2" fill="#090D16" stroke="#334155" stroke-width="1" />
+    <rect x="342" y="147" width="26" height="3" rx="1" fill="#2F6BFF" />
+
+    <!-- Front Digital LED Battery Display Screen -->
+    <rect x="245" y="185" width="110" height="60" rx="12" fill="url(#pbDisplay)" stroke="#334155" stroke-width="1.5" />
+    
+    <!-- LED Readout: "100%" -->
+    <text x="300" y="224" text-anchor="middle" font-family="'Courier New', monospace" font-size="28" font-weight="800" fill="url(#digitalGlow)">100%</text>
+    
+    <!-- Fast Charging Indicator Icon -->
+    <g transform="translate(290, 230)">
+      <polygon points="12,0 6,8 10,8 8,14 14,6 10,6" fill="#38BDF8" />
+    </g>
+
+    <!-- Side Power Button -->
+    <rect x="390" y="200" width="4" height="24" rx="2" fill="#64748B" />
+
+    <!-- Capacity Specs Engraved Text (No Brand Logos) -->
+    <g transform="translate(300, 350)">
+      <text x="0" y="0" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" font-weight="800" fill="#E2E8F0" letter-spacing="1">20000 mAh</text>
+      <text x="0" y="22" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#2F6BFF" letter-spacing="1.5">65W PD FAST CHARGE</text>
+      <text x="0" y="42" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" font-weight="500" fill="#64748B">AIRLINE APPROVED • 74Wh</text>
+    </g>
+  </g>
+
+  <!-- Title / Spec -->
+  <text x="300" y="500" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#475569" letter-spacing="1.5">HIGH-CAPACITY PORTABLE POWER BANK</text>
+</svg>
+

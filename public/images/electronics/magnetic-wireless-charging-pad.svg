@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <radialGradient id="padCanvas" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#F1F5F9" />
+      <stop offset="100%" stop-color="#E2E8F0" />
+    </radialGradient>
+    <radialGradient id="padDisc" cx="45%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#334155" />
+      <stop offset="50%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </radialGradient>
+    <radialGradient id="aluminumRim" cx="50%" cy="45%" r="50%">
+      <stop offset="0%" stop-color="#94A3B8" />
+      <stop offset="70%" stop-color="#475569" />
+      <stop offset="100%" stop-color="#334155" />
+    </radialGradient>
+    <linearGradient id="blueGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#2F6BFF" />
+    </linearGradient>
+    <filter id="padShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#0B1B3A" flood-opacity="0.22" />
+    </filter>
+  </defs>
+
+  <!-- Canvas -->
+  <rect width="600" height="600" rx="32" fill="url(#padCanvas)" />
+
+  <!-- Ambient Shadow -->
+  <ellipse cx="300" cy="385" rx="190" ry="40" fill="#0B1B3A" opacity="0.18" />
+
+  <!-- Braided Cord entering top -->
+  <path d="M 300 180 C 300 100, 380 90, 420 70" fill="none" stroke="#334155" stroke-width="12" stroke-linecap="round" />
+  <rect x="294" y="170" width="12" height="18" rx="3" fill="#0F172A" />
+
+  <!-- Outer Aluminum Beveled Rim -->
+  <circle cx="300" cy="300" r="150" fill="url(#aluminumRim)" filter="url(#padShadow)" />
+
+  <!-- Inner Soft-touch Silicone Disc Surface -->
+  <circle cx="300" cy="300" r="140" fill="url(#padDisc)" stroke="#475569" stroke-width="1.5" />
+
+  <!-- Magnetic Alignment Ring (Concentric Segments) -->
+  <circle cx="300" cy="300" r="95" fill="none" stroke="#2F6BFF" stroke-width="5" stroke-dasharray="16 8" opacity="0.85" />
+  <circle cx="300" cy="300" r="88" fill="none" stroke="#38BDF8" stroke-width="1.5" opacity="0.4" />
+
+  <!-- Center Wireless Qi / Fast Charge Indicator -->
+  <circle cx="300" cy="300" r="38" fill="#0F172A" stroke="#334155" stroke-width="2" />
+  
+  <!-- Subtle Glowing Lightning Bolt -->
+  <polygon points="302,275 288,300 298,300 294,325 312,296 302,296" fill="url(#blueGlow)" />
+
+  <!-- Edge LED Glow Ring (15W Fast Charge Active) -->
+  <circle cx="300" cy="300" r="139" fill="none" stroke="#2F6BFF" stroke-width="2" opacity="0.65" />
+
+  <!-- Status / Power Label -->
+  <text x="300" y="480" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#475569" letter-spacing="1.5">15W FAST WIRELESS CHARGING</text>
+</svg>
+

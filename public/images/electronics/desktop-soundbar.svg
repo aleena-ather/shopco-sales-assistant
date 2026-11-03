@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#EEF4FF" />
+      <stop offset="100%" stop-color="#E2E8F0" />
+    </radialGradient>
+    <linearGradient id="barBody" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" />
+      <stop offset="10%" stop-color="#0F172A" />
+      <stop offset="85%" stop-color="#090D16" />
+      <stop offset="100%" stop-color="#1E293B" />
+    </linearGradient>
+    <linearGradient id="meshGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0B132B" />
+    </linearGradient>
+    <linearGradient id="dialGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#475569" />
+      <stop offset="50%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#0B1B3A" flood-opacity="0.18" />
+    </filter>
+    <pattern id="grillePattern" width="6" height="6" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="1.2" fill="#334155" opacity="0.6" />
+    </pattern>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="600" height="600" rx="32" fill="url(#bgGlow)" />
+
+  <!-- Ambient Shadow below soundbar -->
+  <ellipse cx="300" cy="395" rx="230" ry="22" fill="#0B1B3A" opacity="0.16" />
+
+  <!-- Feet / Stand -->
+  <rect x="110" y="340" width="34" height="20" rx="6" fill="#334155" />
+  <rect x="456" y="340" width="34" height="20" rx="6" fill="#334155" />
+  <rect x="114" y="356" width="26" height="6" rx="3" fill="#0F172A" />
+  <rect x="460" y="356" width="26" height="6" rx="3" fill="#0F172A" />
+
+  <!-- Main Soundbar Enclosure -->
+  <rect x="70" y="240" width="460" height="110" rx="20" fill="url(#barBody)" filter="url(#shadow)" stroke="#334155" stroke-width="1.5" />
+
+  <!-- Front Acoustic Grille (Left Side) -->
+  <rect x="85" y="252" width="175" height="86" rx="12" fill="url(#meshGrad)" />
+  <rect x="85" y="252" width="175" height="86" rx="12" fill="url(#grillePattern)" />
+  <!-- Left Speaker Driver Silhouette -->
+  <circle cx="172" cy="295" r="30" fill="#0F172A" stroke="#334155" stroke-width="2" />
+  <circle cx="172" cy="295" r="14" fill="#1E293B" stroke="#2F6BFF" stroke-width="1.5" />
+  <circle cx="172" cy="295" r="6" fill="#2F6BFF" opacity="0.8" />
+
+  <!-- Front Acoustic Grille (Right Side) -->
+  <rect x="340" y="252" width="175" height="86" rx="12" fill="url(#meshGrad)" />
+  <rect x="340" y="252" width="175" height="86" rx="12" fill="url(#grillePattern)" />
+  <!-- Right Speaker Driver Silhouette -->
+  <circle cx="428" cy="295" r="30" fill="#0F172A" stroke="#334155" stroke-width="2" />
+  <circle cx="428" cy="295" r="14" fill="#1E293B" stroke="#2F6BFF" stroke-width="1.5" />
+  <circle cx="428" cy="295" r="6" fill="#2F6BFF" opacity="0.8" />
+
+  <!-- Center Control Panel Area -->
+  <rect x="270" y="252" width="60" height="86" rx="10" fill="#090D16" stroke="#1E293B" stroke-width="1" />
+  
+  <!-- Metallic Volume Knob with Glowing Ring -->
+  <circle cx="300" cy="290" r="20" fill="url(#dialGrad)" stroke="#475569" stroke-width="1.5" />
+  <circle cx="300" cy="290" r="18" fill="none" stroke="#2F6BFF" stroke-width="1.5" opacity="0.9" stroke-dasharray="4 2" />
+  <circle cx="300" cy="290" r="4" fill="#64748B" />
+  <!-- Notch indicator -->
+  <line x1="300" y1="274" x2="300" y2="280" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" />
+
+  <!-- LED Power & Status Indicator Light -->
+  <circle cx="300" cy="324" r="2.5" fill="#2F6BFF" />
+  <circle cx="300" cy="324" r="5" fill="#2F6BFF" opacity="0.35" />
+
+  <!-- Top Bevel Highlight Line -->
+  <line x1="90" y1="242" x2="510" y2="242" stroke="#475569" stroke-width="1.2" opacity="0.6" stroke-linecap="round" />
+</svg>
+
