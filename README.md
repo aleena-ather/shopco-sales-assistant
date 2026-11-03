@@ -1,146 +1,112 @@
-[![Shopco Screenshot](https://github.com/mohammadoftadeh/repo-assets/blob/main/shopco-cover.png?raw=true)](https://next-ecommerce-shopco.vercel.app/)
+# ⚡ ShopCo Tech — AI Sales Concierge & Electronics Store
 
-# Shopco
+> **Capstone Project**: A production-grade e-commerce web application featuring real-time Google Sheets inventory synchronization and an intelligent AI Sales Concierge powered by **Google Gemini 3.1 Flash Lite**.
 
-Shopco is an open-source project that converts a Figma design of an e-commerce website into a fully responsive front-end application. It utilizes **Next.js 14 App Router**, **TypeScript**, **Tailwind CSS**, **Redux**, **Framer Motion**, and **ShadCN UI** to deliver a modern, scalable, and optimized solution based on industry standards.
+---
 
-## Table of Contents
+## 🌟 Overview
 
-- [Shopco](#shopco)
-  - [Table of Contents](#table-of-contents)
-  - [Overview](#overview)
-  - [Demo](#demo)
-  - [Features](#features)
-  - [Technologies](#technologies)
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [Project Structure](#project-structure)
-  - [Contributing](#contributing)
-  - [Issues](#issues)
-  - [License](#license)
-  - [Contact](#contact)
+**ShopCo Tech** is a modern e-commerce platform specializing in everyday technology, audio gear, fast chargers, gaming accessories, and desk setup essentials. 
 
-## Overview
+Unlike traditional static stores, ShopCo is backed by a **live Google Sheets inventory feed** and an **AI Sales Concierge** that acts as an in-store tech advisor—answering questions, respecting budget constraints, suggesting alternatives for out-of-stock items, and guiding customers through a seamless shopping journey.
 
-Shopco bridges the gap between design and development by converting Figma designs into production-ready code. The project follows best practices for **SEO**, **performance optimization**, and **accessibility**, making it a perfect foundation for developers looking to create scalable and maintainable e-commerce front-ends.
+---
 
-## Demo
+## ✨ Key Features
 
-Check out the live demo: [Shopco Demo](https://next-ecommerce-shopco.vercel.app/)
+### 🤖 Intelligent AI Sales Concierge (Google Gemini 3.1 Flash Lite)
+* **Grounded Catalog Recommendations**: Strictly uses live inventory data—never hallucinates prices, fake discounts, or unverified claims.
+* **Smart Out-of-Stock Handling**: When a shopper asks for a sold-out product, the concierge explains its status and curates in-stock alternatives from the same category.
+* **Budget Searches**: Instantly identifies and displays matching products under any specified price ceiling (e.g., *"What do you have under $40?"*).
+* **Interactive Product Cards**: Directly returns clickable product cards inside the chat with photos, prices, category badges, and quick links to detail pages.
+* **Customer Support Routing**: Seamlessly provides official store support channels when asked non-product inquiries.
+* **Ultra-Fast Latency**: Uses in-memory catalog caching and Gemini 3.1 Flash Lite to deliver answers in under 2 seconds.
 
-<!-- [![Shopco Screenshot](https://github.com/mohammadoftadeh/repo-assets/blob/main/shopco-cover.png?raw=true)](https://next-ecommerce-shopco.vercel.app/) -->
+### 📊 Real-Time Google Sheets Inventory Synchronization
+* Connects directly to Google Sheets API v4 via a secure Google Cloud service account.
+* Dynamically syncs 25 product rows with live pricing, stock status (*In Stock* / *Out of Stock*), categories, descriptions, and ratings.
+* Dynamic category aggregation and stock badges across the entire storefront.
 
-## Features
+### 🎨 Modern Apple-Inspired Hardware Design
+* **Bento Grid Showcase**: Elegant hardware spotlight featuring studio sound, GaN fast chargers, and competitive gaming gear.
+* **100% Fully Responsive**: 
+  * **Mobile (< 640px)**: Full slide-out navigation drawer and app-like floating chat modal with touch-scrollable quick suggestion chips.
+  * **Tablet (768px - 1024px)**: 2-column adaptive layouts.
+  * **Desktop (> 1024px)**: Full dropdown menu, expandable chat window (440px to 560px), and rich product filter sidebars.
 
-- **Next.js 14**: Server-side rendering (SSR), Static Site Generation (SSG), optimized routing, and API integrations.
-- **TypeScript**: Strongly typed code for better error detection and maintainability.
-- **Tailwind CSS**: Utility-first CSS framework for rapid UI development.
-- **Redux**: State management for managing the shopping cart and other global states.
-- **Framer Motion**: Smooth animations and transitions for an enhanced user experience.
-- **ShadCN UI**: Beautifully styled, accessible, and customizable UI components.
-- **Fully Responsive**: Mobile-first design ensuring the layout adapts across devices.
-- **Performance Optimized**: Best practices followed for fast loading and interaction.
-- **Accessible**: Built with accessibility standards to provide an inclusive experience.
+### 🛒 Complete E-Commerce Experience
+* **Catalog & Filter Page**: Filter by category, price bounds slider, search keywords, and sorting (price low-to-high, high-to-low, popularity).
+* **Product Detail Pages**: Dynamic routing, image galleries, live stock pills, and customer review tabs.
+* **Persistent Cart**: Redux-powered shopping cart with promo codes, subtotal calculations, and checkout modal.
 
-## Technologies
+---
 
-- **Next.js 14** - A popular React framework with built-in SSR and optimization.
-- **TypeScript** - A superset of JavaScript for strong typing and code consistency.
-- **Tailwind CSS** - A utility-first CSS framework for fast, responsive design.
-- **Redux** - A state management library used for the shopping cart and global app state.
-- **Framer Motion** - A library for animations and interactions in React.
-- **ShadCN UI** - A collection of beautiful, accessible, and customizable UI components.
-- **Figma** - The design tool used as the source of the project’s layout. The [Figma file](https://www.figma.com/community/file/1273571982885059508/e-commerce-website-template-freebie) designed by [Hamza Naeem](https://www.figma.com/@hamzauix)
+## 🛠️ Tech Stack
 
-## Installation
+| Layer | Technology |
+|---|---|
+| **Framework** | [Next.js 14](https://nextjs.org/) (App Router, Server Components) |
+| **Language** | [TypeScript](https://www.typescriptlang.org/) |
+| **Styling** | [Tailwind CSS](https://tailwindcss.com/) & [ShadCN UI](https://ui.shadcn.com/) |
+| **State Management** | [Redux Toolkit](https://redux-toolkit.js.org/) |
+| **Animations** | [Framer Motion](https://www.framer.com/motion/) |
+| **AI Engine** | [Google Gemini 3.1 Flash Lite](https://ai.google.dev/) |
+| **Inventory Source** | [Google Sheets API v4](https://developers.google.com/sheets/api) |
+| **Icons** | [Lucide React](https://lucide.dev/) & [React Icons](https://react-icons.github.io/react-icons/) |
 
-To get started with Shopco locally, follow these steps:
+---
 
-1. **Clone the repository:**
+## 🚀 Getting Started
 
-   ```bash
-   git clone https://github.com/mohammadoftadeh/next-ecommerce-shopco.git
-   cd next-ecommerce-shopco
-   ```
-
-2. **Install dependencies:**
-
-   ```bash
-   npm install
-   ```
-
-   ```bash
-   yarn install
-   ```
-
-3. **Run the development server:**
-
-   ```bash
-   npm run dev
-   ```
-
-   ```bash
-   yarn dev
-   ```
-
-4. **Open in your browser:**
-   Navigate to [http://localhost:3000](http://localhost:3000) to view the app.
-
-## Usage
-
-- To explore or modify the code, navigate through the `components`, `features`, and `app` directories.
-- The shopping cart logic is managed using **Redux**. You can find the store configuration and cart actions in the `src/lib/features` directory.
-- **ShadCN UI** components are used across the app. They can be customized in the `src/components/ui` directory.
-- You can easily modify and extend the project to suit your needs, whether for personal use or professional projects.
-
-## Project Structure
-
+### 1. Clone the Repository
 ```bash
-Shopco/
-│
-├── public/                # Static assets
-├── src/
-│   ├── app/               # Next.js App Router
-│   ├── components/        # Reusable components (including ShadCN UI components)
-│   └── lib/
-│       ├── features/      # The Redux logics for features (e.g., shopping cart)
-│       ├── hooks/         # Custom React hooks
-│       ├── store.ts       # Redux store
-│       ├── utils.ts       # Utility functions
-│   ├── styles/            # Tailwind CSS styles (global, utilities and fonts)
-│   ├── types/             # TypeScript types
-│
-├── components.json         # ShadCN UI configuration
-├── next.config.mjs         # Next.js configuration
-├── package.json            # Node.js dependencies and scripts
-├── postcss.config.mjs      # Post CSS configuration
-└── README.md               # Project documentation
-├── tailwind.config.js      # Tailwind CSS configuration
-├── tsconfig.json           # TypeScript configuration
+git clone https://github.com/aleena-ather/shopco-sales-assistant.git
+cd shopco-sales-assistant
 ```
 
-## Contributing
+### 2. Install Dependencies
+```bash
+npm install
+```
 
-Contributions are welcome! If you'd like to contribute, Please follow these steps to contribute to Shopco:
+### 3. Configure Environment Variables
+Create a `.env.local` file in the root directory:
+```env
+GEMINI_API_KEY=your_gemini_api_key_here
+GEMINI_MODEL=gemini-3.1-flash-lite
+GOOGLE_SHEET_ID=your_google_sheet_id_here
+GOOGLE_SERVICE_ACCOUNT_KEY_FILE=your_service_account.json
+SUPPORT_EMAIL=support@example.com
+```
 
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature/your-feature-name`).
-3. Make your changes.
-4. Push to the branch (`git push origin feature/your-feature-name`).
-5. Open a pull request.
+### 4. Run the Development Server
+```bash
+npm run dev
+```
 
-## Issues
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
 
-Feel free to submit issues for any bugs, feature requests, or general questions related to the project. You can also reach out via [email](mailto:mr.mohammadoftadeh@gmail.com) for support.
+---
 
-## License
+## 🧪 3-Question Capstone Verification
 
-This project is licensed under the MIT License - see the [LICENSE](https://opensource.org/licenses/MIT) file for details.
+The AI Sales Concierge is tested and verified against core retail scenarios:
 
-## Contact
+1. **Budget Search**: *"What items do you have under $40?"*  
+   ➔ Returns curated in-stock accessories and audio gear under $40 with interactive product cards.
+2. **Out-of-Stock Check**: *"Is the Wireless Gaming Headset available?"*  
+   ➔ Acknowledges the item is sold out and immediately recommends in-stock alternatives (Wired Gaming Headset, Earbuds).
+3. **Store Support**: *"How do I contact customer support?"*  
+   ➔ Shares the verified support email channel without showing unrelated product cards.
 
-Feel free to reach out to:
+---
 
-- **Name**: Mohammad Oftadeh
-- **Email**: [mr.mohammadoftadeh@gmail.com](mailto:mr.mohammadoftadeh@gmail.com)
-- **GitHub**: [https://github.com/mohammadoftadeh](https://github.com/mohammadoftadeh)
+## 👩‍💻 Author
+
+**Aleena Ather**  
+* GitHub: [@aleena-ather](https://github.com/aleena-ather)
+
+---
+
+## 📄 License
+This project is licensed under the MIT License.
