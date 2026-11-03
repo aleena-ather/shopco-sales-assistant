@@ -68,7 +68,25 @@ To get started with Shopco locally, follow these steps:
    yarn install
    ```
 
-3. **Run the development server:**
+3. **Set up environment variables:**
+
+   Create a `.env.local` file in the root directory (or copy from `.env.example`):
+
+   ```bash
+   cp .env.example .env.local
+   ```
+
+   Add your API keys and configuration in `.env.local`:
+
+   ```env
+   GEMINI_API_KEY=your_gemini_api_key
+   GEMINI_MODEL=gemini-3.1-flash-lite
+   GOOGLE_SHEET_ID=your_google_sheet_id
+   GOOGLE_SERVICE_ACCOUNT_KEY_FILE=your_service_account.json
+   SUPPORT_EMAIL=support@example.com
+   ```
+
+4. **Run the development server:**
 
    ```bash
    npm run dev
@@ -78,7 +96,7 @@ To get started with Shopco locally, follow these steps:
    yarn dev
    ```
 
-4. **Open in your browser:**  
+5. **Open in your browser:**  
    Navigate to [http://localhost:3000](http://localhost:3000) to view the app.
 
 ## Usage
