@@ -80,7 +80,7 @@ To get started with Shopco locally, follow these steps:
 
    ```env
    GEMINI_API_KEY=your_gemini_api_key
-   GEMINI_MODEL=gemini-3.1-flash-lite
+   GEMINI_MODEL=gemini-3-flash-preview
    GOOGLE_SHEET_ID=your_google_sheet_id
    GOOGLE_SERVICE_ACCOUNT_KEY_FILE=your_service_account.json
    SUPPORT_EMAIL=support@example.com
