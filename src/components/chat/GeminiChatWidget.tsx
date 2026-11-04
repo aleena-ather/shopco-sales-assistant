@@ -125,6 +125,7 @@ export default function GeminiChatWidget() {
   const pathname = usePathname();
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const lastAssistantMsgRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
   // Focus input when chat opens
@@ -174,9 +175,22 @@ export default function GeminiChatWidget() {
     }
   }, [messages]);
 
-  // Scroll to bottom when message list changes or widget opens
+  // Scroll behavior:
+  // - When assistant responds: scroll to the START of the assistant's response so user sees the answer text from the top
+  // - When user sends: scroll to the bottom so user question and typing indicator are visible
   useEffect(() => {
-    if (isOpen) {
+    if (!isOpen || messages.length === 0) return;
+
+    const lastMsg = messages[messages.length - 1];
+    if (lastMsg.role === "assistant" && messages.length > 1) {
+      const timer = setTimeout(() => {
+        lastAssistantMsgRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }, 60);
+      return () => clearTimeout(timer);
+    } else {
       messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
     }
   }, [messages, isOpen]);
@@ -383,13 +397,17 @@ export default function GeminiChatWidget() {
 
           {/* Messages Body */}
           <div className="flex-1 overflow-y-auto px-4 py-4 space-y-3 bg-[#F8FAFC]">
-            {messages.map((msg) => (
-              <div
-                key={msg.id}
-                className={`flex flex-col ${
-                  msg.role === "user" ? "items-end" : "items-start"
-                }`}
-              >
+            {messages.map((msg, idx) => {
+              const isLastAssistant =
+                msg.role === "assistant" && idx === messages.length - 1;
+              return (
+                <div
+                  key={msg.id}
+                  ref={isLastAssistant ? lastAssistantMsgRef : null}
+                  className={`flex flex-col scroll-mt-3 ${
+                    msg.role === "user" ? "items-end" : "items-start"
+                  }`}
+                >
                 <div
                   className={`max-w-[88%] rounded-2xl px-4 py-3 text-sm leading-relaxed break-words [overflow-wrap:anywhere] ${
                     msg.role === "user"
@@ -498,7 +516,8 @@ export default function GeminiChatWidget() {
                   {msg.timestamp}
                 </span>
               </div>
-            ))}
+            );
+          })}
 
             {isLoading && (
               <div className="flex items-start space-x-2">
