@@ -203,11 +203,10 @@ You MUST respond with valid JSON containing exactly two keys:
     // 3. Model selection: ultra-fast Gemini 3 models first with zero thinking budget
     const envModel = process.env.GEMINI_MODEL?.trim();
     const candidateModels = [
-      ...(envModel ? [envModel] : []),
       "gemini-3-flash-preview",
       "gemini-3.6-flash",
+      ...(envModel && envModel !== "gemini-3.1-flash-lite" ? [envModel] : []),
       "gemini-3.5-flash",
-      "gemini-3.1-flash-lite",
     ];
     const modelsToTry = Array.from(new Set(candidateModels));
 
@@ -221,7 +220,7 @@ You MUST respond with valid JSON containing exactly two keys:
         const geminiRes = await fetch(url, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          signal: AbortSignal.timeout(4500),
+          signal: AbortSignal.timeout(3500),
           body: JSON.stringify({
             contents,
             generationConfig: {
